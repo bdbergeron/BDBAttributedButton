@@ -4,6 +4,8 @@ BTButton is a UIButton subclass for iOS 7. Although many argue that one should n
 
 Take a look at the included demo app in order to get a full understanding of how BTButton works.
 
+![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BTButton/Demo.png)
+
 ## Installation
 
 To use BTButton in you projects, you can simply add `pod BTButton, '~> 1.0.0'` to your Podfile, if you're using CocoaPods. If you prefer the manual route, just add the contents of the BTButton folder to your project. Super simple!
