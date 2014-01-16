@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary   = 'A UIButton subclass with easy button styling!'
   s.homepage  = 'https://github.com/bdbergeron/BTButton'
   s.authors   = { 'Bradley David Bergeron' => 'brad@bradbergeron.com' }
-  s.source    = { :git => 'https://github.com/bdbergeron/BTButton.git', :tag => '0.1.0' }
+  s.source    = { :git => 'https://github.com/bdbergeron/BTButton.git', :tag => s.version.to_s }
   s.requires_arc = true
   
   s.platform = :ios, '7.0'
