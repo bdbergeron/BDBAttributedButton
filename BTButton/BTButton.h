@@ -22,18 +22,11 @@
 
 @import UIKit;
 
+
 FOUNDATION_EXPORT NSString * const BTButtonCornerRadiusName;
 FOUNDATION_EXPORT NSString * const BTButtonFillColorName;
 FOUNDATION_EXPORT NSString * const BTButtonBorderColorName;
 FOUNDATION_EXPORT NSString * const BTButtonBorderWidthName;
-
-
-typedef NS_ENUM(NSUInteger, BTButtonStyle)
-{
-    BTButtonStyleNormal,
-    BTButtonStyleOutline,
-    BTButtonStyleFill
-};
 
 
 #pragma mark -

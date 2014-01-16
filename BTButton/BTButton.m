@@ -74,6 +74,18 @@ NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWid
 }
 
 #pragma mark Background Images
+static inline NSString *btbutton_NSStringFromUIColor(UIColor *color)
+{
+    if (!color)
+        return nil;
+
+    const CGFloat *c = CGColorGetComponents(color.CGColor);
+    if (CGColorGetNumberOfComponents(color.CGColor) == 2)
+        return [NSString stringWithFormat:@"{%f, %f}", c[0], c[1]];
+    else
+        return [NSString stringWithFormat:@"{%f, %f, %f, %f}", c[0], c[1], c[2], c[3]];
+}
+
 - (UIImage *)btbutton_backgroundImageForState:(UIControlState)state
 {
     static NSCache *_backgroundImages;
@@ -98,17 +110,19 @@ NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWid
 
     CGFloat borderWidth = [attributes[BTButtonBorderWidthName] floatValue];
 
-    NSString *identifier = [NSString stringWithFormat:@"%@BackgroundImage_r%0.2f_f%@_b%@_w%0.2f",
-                            NSStringFromClass([self class]), radius,
-                            btbutton_NSStringFromUIColor(fillColor), btbutton_NSStringFromUIColor(borderColor),
-                            borderWidth];
+    NSString *identifier =
+        [NSString stringWithFormat:@"BTButtonBackgroundImage_r%0.2f_f%@_b%@_w%0.2f", radius,
+            btbutton_NSStringFromUIColor(fillColor), btbutton_NSStringFromUIColor(borderColor),
+            borderWidth];
+
     UIImage *image = [_backgroundImages objectForKey:identifier];
     if (!image)
     {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0);
         CGContextRef context = UIGraphicsGetCurrentContext();
 
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius];
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                        cornerRadius:radius];
         CGContextAddPath(context, path.CGPath);
         CGContextClip(context);
 
@@ -125,18 +139,6 @@ NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWid
         [_backgroundImages setObject:image forKey:identifier];
     }
     return image;
-}
-
-static inline NSString *btbutton_NSStringFromUIColor(UIColor *color)
-{
-    if (!color)
-        return nil;
-
-    const CGFloat *c = CGColorGetComponents(color.CGColor);
-    if (CGColorGetNumberOfComponents(color.CGColor) == 2)
-        return [NSString stringWithFormat:@"{%f, %f}", c[0], c[1]];
-    else
-        return [NSString stringWithFormat:@"{%f, %f, %f, %f}", c[0], c[1], c[2], c[3]];
 }
 
 @end
