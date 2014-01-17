@@ -27,8 +27,8 @@ NSAttributedString *title =
                                     attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
 BDBAttributedButton *button = [BDBAttributedButton new];
-[button setStyleAttributes:@{BDBAttributedButtonCornerRadiusName:@(5.0f),
-                             BDBAttributedButtonFillColorName:[UIColor red]}
+[button setStyleAttributes:@{BDBCornerRadiusAttributeName:@(5.0f),
+                             BDBFillColorAttributeName:[UIColor red]}
            forControlState:UIControlStateNormal];
 [button setAttributedTitle:title forControlState:UIControlStateNormal];
 [button sizeToFit];

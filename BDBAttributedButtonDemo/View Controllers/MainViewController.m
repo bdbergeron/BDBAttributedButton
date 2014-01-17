@@ -44,8 +44,8 @@
     NSMutableAttributedString *buttonHighlightedTitle = [buttonTitle mutableCopy];
     [buttonHighlightedTitle addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, buttonTitle.length)];
 
-    NSDictionary *buttonAttributes = @{BDBAttributedButtonCornerRadiusName:@(10.0f), BDBAttributedButtonBorderWidthName:@(1.0f), BDBAttributedButtonBorderColorName:[UIColor redColor]};
-    NSDictionary *buttonHighlightedAttributes = @{BDBAttributedButtonCornerRadiusName:@(10.0f), BDBAttributedButtonBorderWidthName:@(1.0f), BDBAttributedButtonBorderColorName:[UIColor darkGrayColor]};
+    NSDictionary *buttonAttributes = @{BDBCornerRadiusAttributeName:@(10.0f), BDBBorderWidthAttributeName:@(1.0f), BDBBorderColorAttributeName:[UIColor redColor]};
+    NSDictionary *buttonHighlightedAttributes = @{BDBCornerRadiusAttributeName:@(10.0f), BDBBorderWidthAttributeName:@(1.0f), BDBBorderColorAttributeName:[UIColor darkGrayColor]};
 
     BDBAttributedButton *button = [[BDBAttributedButton alloc] initWithFrame:CGRectMake(0.0f, 84.0f, 0.0f, 0.0f)];
     [button setAttributedTitle:buttonTitle forState:UIControlStateNormal];
@@ -62,8 +62,8 @@
     buttonHighlightedTitle = [buttonTitle mutableCopy];
     [buttonHighlightedTitle addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, buttonTitle.length)];
 
-    buttonAttributes = @{BDBAttributedButtonCornerRadiusName:@(10.0f), BDBAttributedButtonBorderWidthName:@(1.0f), BDBAttributedButtonBorderColorName:[UIColor orangeColor]};
-    buttonHighlightedAttributes = @{BDBAttributedButtonCornerRadiusName:@(10.0f), BDBAttributedButtonFillColorName:[UIColor orangeColor]};
+    buttonAttributes = @{BDBCornerRadiusAttributeName:@(10.0f), BDBBorderWidthAttributeName:@(1.0f), BDBBorderColorAttributeName:[UIColor orangeColor]};
+    buttonHighlightedAttributes = @{BDBCornerRadiusAttributeName:@(10.0f), BDBFillColorAttributeName:[UIColor orangeColor]};
 
     button = [[BDBAttributedButton alloc] initWithFrame:CGRectMake(0.0f, CGRectGetMaxY(button.frame) + 16.0f, 0.0f, 0.0f)];
     [button setAttributedTitle:buttonTitle forState:UIControlStateNormal];
@@ -77,7 +77,7 @@
 
     // Button 3: Filled
     buttonTitle = [self titleWithString:NSLocalizedString(@"Filled Button", nil) font:buttonFont color:[UIColor whiteColor]];
-    buttonAttributes = @{BDBAttributedButtonCornerRadiusName:@(10.0f), BDBAttributedButtonFillColorName:[UIColor blueColor]};
+    buttonAttributes = @{BDBCornerRadiusAttributeName:@(10.0f), BDBFillColorAttributeName:[UIColor blueColor]};
 
     button = [[BDBAttributedButton alloc] initWithFrame:CGRectMake(0.0f, CGRectGetMaxY(button.frame) + 16.0f, 0.0f, 0.0f)];
     [button setAttributedTitle:buttonTitle forState:UIControlStateNormal];

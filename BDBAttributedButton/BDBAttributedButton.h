@@ -23,10 +23,10 @@
 @import UIKit;
 
 
-FOUNDATION_EXPORT NSString * const BDBAttributedButtonCornerRadiusName;
-FOUNDATION_EXPORT NSString * const BDBAttributedButtonFillColorName;
-FOUNDATION_EXPORT NSString * const BDBAttributedButtonBorderColorName;
-FOUNDATION_EXPORT NSString * const BDBAttributedButtonBorderWidthName;
+FOUNDATION_EXPORT NSString * const BDBCornerRadiusAttributeName;
+FOUNDATION_EXPORT NSString * const BDBFillColorAttributeName;
+FOUNDATION_EXPORT NSString * const BDBBorderColorAttributeName;
+FOUNDATION_EXPORT NSString * const BDBBorderWidthAttributeName;
 
 
 #pragma mark -

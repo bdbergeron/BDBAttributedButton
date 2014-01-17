@@ -23,10 +23,10 @@
 #import "BDBAttributedButton.h"
 
 
-NSString * const BDBAttributedButtonCornerRadiusName = @"com.bradbergeron.BDBAttributedButtonCornerRadiusName";
-NSString * const BDBAttributedButtonFillColorName    = @"com.bradbergeron.BDBAttributedButtonFillColorName";
-NSString * const BDBAttributedButtonBorderColorName  = @"com.bradbergeron.BDBAttributedButtonBorderColorName";
-NSString * const BDBAttributedButtonBorderWidthName  = @"com.bradbergeron.BDBAttributedButtonBorderWidthName";
+NSString * const BDBCornerRadiusAttributeName = @"com.bradbergeron.BDBCornerRadiusAttributeName";
+NSString * const BDBFillColorAttributeName    = @"com.bradbergeron.BDBFillColorAttributeName";
+NSString * const BDBBorderColorAttributeName  = @"com.bradbergeron.BDBBorderColorAttributeName";
+NSString * const BDBBorderWidthAttributeName  = @"com.bradbergeron.BDBBorderWidthAttributeName";
 
 
 #pragma mark -
@@ -99,17 +99,17 @@ static inline NSString *BDBAttributedButton_NSStringFromUIColor(UIColor *color)
     if (!attributes)
         return nil;
 
-    CGFloat radius = [attributes[BDBAttributedButtonCornerRadiusName] floatValue];
+    CGFloat radius = [attributes[BDBCornerRadiusAttributeName] floatValue];
 
-    UIColor *fillColor = attributes[BDBAttributedButtonFillColorName];
+    UIColor *fillColor = attributes[BDBFillColorAttributeName];
     if (!fillColor)
         fillColor = [UIColor clearColor];
 
-    UIColor *borderColor = attributes[BDBAttributedButtonBorderColorName];
+    UIColor *borderColor = attributes[BDBBorderColorAttributeName];
     if (!borderColor)
         borderColor = [UIColor clearColor];
 
-    CGFloat borderWidth = [attributes[BDBAttributedButtonBorderWidthName] floatValue];
+    CGFloat borderWidth = [attributes[BDBBorderWidthAttributeName] floatValue];
 
     NSString *identifier =
         [NSString stringWithFormat:@"BDBAttributedButtonBackgroundImage_r%0.2f_f%@_b%@_w%0.2f", radius,
