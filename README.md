@@ -1,18 +1,18 @@
-# BTButton
+# BDBAttributedButton
 
-BTButton is a UIButton subclass for iOS 7. Although many argue that one should not subclass UIButton, all BTButton does is add a couple methods that make styling buttons in iOS applcations much simpler.
+BDBAttributedButton is a UIButton subclass for iOS 7. Although many argue that one should not subclass UIButton, all BDBAttributedButton does is add a couple methods that make styling buttons in iOS applcations much simpler.
 
-Take a look at the included demo app in order to get a full understanding of how BTButton works.
+Take a look at the included demo app in order to get a full understanding of how BDBAttributedButton works.
 
-![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BTButton/Demo.png)
+![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BDBAttributedButton/Demo.png)
 
 ## Installation
 
-To use BTButton in you projects, you can simply add `pod BTButton, '~> 1.0.0'` to your Podfile, if you're using CocoaPods. If you prefer the manual route, just add the contents of the BTButton folder to your project. Super simple!
+To use BDBAttributedButton in you projects, you can simply add `pod BDBAttributedButton, '~> 1.0.0'` to your Podfile, if you're using CocoaPods. If you prefer the manual route, just add the contents of the BDBAttributedButton folder to your project. Super simple!
 
 ## Usage
 
-Taking inspiration from Apple's push to using NSAttributedStrings throughout iOS 7, BTButton uses one simple method to set the style of a button. The currently supported customizations are:
+Taking inspiration from Apple's push to using NSAttributedStrings throughout iOS 7, BDBAttributedButton uses one simple method to set the style of a button. The currently supported customizations are:
 
 * Corner Radius
 * Fill Color
@@ -26,9 +26,9 @@ NSAttributedString *title =
     [[NSAttributedString alloc] initWithString:@"Button"
                                     attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
-BTButton *button = [BTButton new];
-[button setStyleAttributes:@{BTButtonCornerRadiusName:@(5.0f),
-                             BTButtonFillColorName:[UIColor red]}
+BDBAttributedButton *button = [BDBAttributedButton new];
+[button setStyleAttributes:@{BDBAttributedButtonCornerRadiusName:@(5.0f),
+                             BDBAttributedButtonFillColorName:[UIColor red]}
            forControlState:UIControlStateNormal];
 [button setAttributedTitle:title forControlState:UIControlStateNormal];
 [button sizeToFit];

@@ -14,26 +14,26 @@
 		E84DFAF0188302BE00CCD4DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84DFAE8188302BE00CCD4DF /* Images.xcassets */; };
 		E84DFAF2188302BE00CCD4DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E84DFAEC188302BE00CCD4DF /* InfoPlist.strings */; };
 		E84DFAF3188302BE00CCD4DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E84DFAEE188302BE00CCD4DF /* main.m */; };
-		E84DFAF71883031200CCD4DF /* BTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E84DFAF61883031200CCD4DF /* BTButton.m */; };
 		E84DFAFE188303E500CCD4DF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84DFAFD188303E500CCD4DF /* MainViewController.m */; };
+		E8674D7D1888C5F200F839E8 /* BDBAttributedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8674D7C1888C5F200F839E8 /* BDBAttributedButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E81A2D1B1883026F00B69199 /* BTButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81A2D1B1883026F00B69199 /* BDBAttributedButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDBAttributedButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81A2D1E1883026F00B69199 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E81A2D201883026F00B69199 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E81A2D221883026F00B69199 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E84DFAE5188302BE00CCD4DF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E84DFAE6188302BE00CCD4DF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E84DFAE8188302BE00CCD4DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E84DFAEA188302BE00CCD4DF /* BTButtonDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BTButtonDemo-Info.plist"; sourceTree = "<group>"; };
-		E84DFAEB188302BE00CCD4DF /* BTButtonDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTButtonDemo-Prefix.pch"; sourceTree = "<group>"; };
+		E84DFAEA188302BE00CCD4DF /* BDBAttributedButtonDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BDBAttributedButtonDemo-Info.plist"; sourceTree = "<group>"; };
+		E84DFAEB188302BE00CCD4DF /* BDBAttributedButtonDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BDBAttributedButtonDemo-Prefix.pch"; sourceTree = "<group>"; };
 		E84DFAED188302BE00CCD4DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E84DFAEE188302BE00CCD4DF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E84DFAF51883031200CCD4DF /* BTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTButton.h; sourceTree = "<group>"; };
-		E84DFAF61883031200CCD4DF /* BTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTButton.m; sourceTree = "<group>"; };
 		E84DFAFC188303E500CCD4DF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E84DFAFD188303E500CCD4DF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E8674D7B1888C5F200F839E8 /* BDBAttributedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBAttributedButton.h; sourceTree = "<group>"; };
+		E8674D7C1888C5F200F839E8 /* BDBAttributedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBAttributedButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +53,8 @@
 		E81A2D121883026F00B69199 = {
 			isa = PBXGroup;
 			children = (
-				E84DFAF41883031200CCD4DF /* BTButton */,
-				E84DFAE4188302BE00CCD4DF /* BTButtonDemo */,
+				E8674D7A1888C5F200F839E8 /* BDBAttributedButton */,
+				E84DFAE4188302BE00CCD4DF /* BDBAttributedButtonDemo */,
 				E81A2D1D1883026F00B69199 /* Frameworks */,
 				E81A2D1C1883026F00B69199 /* Products */,
 			);
@@ -63,7 +63,7 @@
 		E81A2D1C1883026F00B69199 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E81A2D1B1883026F00B69199 /* BTButtonDemo.app */,
+				E81A2D1B1883026F00B69199 /* BDBAttributedButtonDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E84DFAE4188302BE00CCD4DF /* BTButtonDemo */ = {
+		E84DFAE4188302BE00CCD4DF /* BDBAttributedButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
 				E84DFAE5188302BE00CCD4DF /* AppDelegate.h */,
@@ -87,7 +87,7 @@
 				E84DFAFB188303E500CCD4DF /* View Controllers */,
 				E84DFAE9188302BE00CCD4DF /* Supporting Files */,
 			);
-			path = BTButtonDemo;
+			path = BDBAttributedButtonDemo;
 			sourceTree = "<group>";
 		};
 		E84DFAE7188302BE00CCD4DF /* Resources */ = {
@@ -101,21 +101,12 @@
 		E84DFAE9188302BE00CCD4DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E84DFAEA188302BE00CCD4DF /* BTButtonDemo-Info.plist */,
-				E84DFAEB188302BE00CCD4DF /* BTButtonDemo-Prefix.pch */,
+				E84DFAEA188302BE00CCD4DF /* BDBAttributedButtonDemo-Info.plist */,
+				E84DFAEB188302BE00CCD4DF /* BDBAttributedButtonDemo-Prefix.pch */,
 				E84DFAEC188302BE00CCD4DF /* InfoPlist.strings */,
 				E84DFAEE188302BE00CCD4DF /* main.m */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E84DFAF41883031200CCD4DF /* BTButton */ = {
-			isa = PBXGroup;
-			children = (
-				E84DFAF51883031200CCD4DF /* BTButton.h */,
-				E84DFAF61883031200CCD4DF /* BTButton.m */,
-			);
-			path = BTButton;
 			sourceTree = "<group>";
 		};
 		E84DFAFB188303E500CCD4DF /* View Controllers */ = {
@@ -127,12 +118,21 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		E8674D7A1888C5F200F839E8 /* BDBAttributedButton */ = {
+			isa = PBXGroup;
+			children = (
+				E8674D7B1888C5F200F839E8 /* BDBAttributedButton.h */,
+				E8674D7C1888C5F200F839E8 /* BDBAttributedButton.m */,
+			);
+			path = BDBAttributedButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E81A2D1A1883026F00B69199 /* BTButtonDemo */ = {
+		E81A2D1A1883026F00B69199 /* BDBAttributedButtonDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E81A2D471883026F00B69199 /* Build configuration list for PBXNativeTarget "BTButtonDemo" */;
+			buildConfigurationList = E81A2D471883026F00B69199 /* Build configuration list for PBXNativeTarget "BDBAttributedButtonDemo" */;
 			buildPhases = (
 				E81A2D171883026F00B69199 /* Sources */,
 				E81A2D181883026F00B69199 /* Frameworks */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = BTButtonDemo;
+			name = BDBAttributedButtonDemo;
 			productName = BTButtonDemo;
-			productReference = E81A2D1B1883026F00B69199 /* BTButtonDemo.app */;
+			productReference = E81A2D1B1883026F00B69199 /* BDBAttributedButtonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -156,7 +156,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Bradley David Bergeron";
 			};
-			buildConfigurationList = E81A2D161883026F00B69199 /* Build configuration list for PBXProject "BTButtonDemo" */;
+			buildConfigurationList = E81A2D161883026F00B69199 /* Build configuration list for PBXProject "BDBAttributedButtonDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -168,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E81A2D1A1883026F00B69199 /* BTButtonDemo */,
+				E81A2D1A1883026F00B69199 /* BDBAttributedButtonDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -190,8 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8674D7D1888C5F200F839E8 /* BDBAttributedButton.m in Sources */,
 				E84DFAF3188302BE00CCD4DF /* main.m in Sources */,
-				E84DFAF71883031200CCD4DF /* BTButton.m in Sources */,
 				E84DFAEF188302BE00CCD4DF /* AppDelegate.m in Sources */,
 				E84DFAFE188303E500CCD4DF /* MainViewController.m in Sources */,
 			);
@@ -291,10 +291,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BTButtonDemo/Supporting Files/BTButtonDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "BDBAttributedButtonDemo/Supporting Files/BDBAttributedButtonDemo-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/BTButtonDemo/Supporting Files/BTButtonDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BDBAttributedButtonDemo/Supporting Files/BDBAttributedButtonDemo-Info.plist";
+				PRODUCT_NAME = BDBAttributedButtonDemo;
 				WARNING_CFLAGS = (
 					"-Weverything",
 					"-Wno-unused-exception-parameter",
@@ -310,10 +310,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BTButtonDemo/Supporting Files/BTButtonDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "BDBAttributedButtonDemo/Supporting Files/BDBAttributedButtonDemo-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/BTButtonDemo/Supporting Files/BTButtonDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BDBAttributedButtonDemo/Supporting Files/BDBAttributedButtonDemo-Info.plist";
+				PRODUCT_NAME = BDBAttributedButtonDemo;
 				WARNING_CFLAGS = (
 					"-Weverything",
 					"-Wno-unused-exception-parameter",
@@ -326,7 +326,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E81A2D161883026F00B69199 /* Build configuration list for PBXProject "BTButtonDemo" */ = {
+		E81A2D161883026F00B69199 /* Build configuration list for PBXProject "BDBAttributedButtonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E81A2D451883026F00B69199 /* Debug */,
@@ -335,7 +335,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E81A2D471883026F00B69199 /* Build configuration list for PBXNativeTarget "BTButtonDemo" */ = {
+		E81A2D471883026F00B69199 /* Build configuration list for PBXNativeTarget "BDBAttributedButtonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E81A2D481883026F00B69199 /* Debug */,

@@ -1,5 +1,5 @@
 //
-//  BTButton.m
+//  BDBAttributedButton.m
 //
 //  Copyright (c) 2014 Bradley David Bergeron
 //
@@ -20,17 +20,17 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "BTButton.h"
+#import "BDBAttributedButton.h"
 
 
-NSString * const BTButtonCornerRadiusName = @"com.bradbergeron.BTButtonCornerRadiusName";
-NSString * const BTButtonFillColorName    = @"com.bradbergeron.BTButtonFillColorName";
-NSString * const BTButtonBorderColorName  = @"com.bradbergeron.BTButtonBorderColorName";
-NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWidthName";
+NSString * const BDBAttributedButtonCornerRadiusName = @"com.bradbergeron.BDBAttributedButtonCornerRadiusName";
+NSString * const BDBAttributedButtonFillColorName    = @"com.bradbergeron.BDBAttributedButtonFillColorName";
+NSString * const BDBAttributedButtonBorderColorName  = @"com.bradbergeron.BDBAttributedButtonBorderColorName";
+NSString * const BDBAttributedButtonBorderWidthName  = @"com.bradbergeron.BDBAttributedButtonBorderWidthName";
 
 
 #pragma mark -
-@interface BTButton ()
+@interface BDBAttributedButton ()
 
 @property (nonatomic) NSMutableDictionary *styleAttributes;
 
@@ -38,7 +38,7 @@ NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWid
 
 
 #pragma mark -
-@implementation BTButton
+@implementation BDBAttributedButton
 
 #pragma mark View Lifecycle
 - (id)initWithFrame:(CGRect)frame
@@ -58,7 +58,8 @@ NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWid
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    [super setBackgroundImage:[self btbutton_backgroundImageForState:self.state] forState:self.state];
+    [super setBackgroundImage:[self BDBAttributedButton_backgroundImageForState:self.state]
+                     forState:self.state];
 }
 
 #pragma mark Attributes
@@ -74,7 +75,7 @@ NSString * const BTButtonBorderWidthName  = @"com.bradbergeron.BTButtonBorderWid
 }
 
 #pragma mark Background Images
-static inline NSString *btbutton_NSStringFromUIColor(UIColor *color)
+static inline NSString *BDBAttributedButton_NSStringFromUIColor(UIColor *color)
 {
     if (!color)
         return nil;
@@ -86,7 +87,7 @@ static inline NSString *btbutton_NSStringFromUIColor(UIColor *color)
         return [NSString stringWithFormat:@"{%f, %f, %f, %f}", c[0], c[1], c[2], c[3]];
 }
 
-- (UIImage *)btbutton_backgroundImageForState:(UIControlState)state
+- (UIImage *)BDBAttributedButton_backgroundImageForState:(UIControlState)state
 {
     static NSCache *_backgroundImages;
     static dispatch_once_t onceToken;
@@ -98,21 +99,21 @@ static inline NSString *btbutton_NSStringFromUIColor(UIColor *color)
     if (!attributes)
         return nil;
 
-    CGFloat radius = [attributes[BTButtonCornerRadiusName] floatValue];
+    CGFloat radius = [attributes[BDBAttributedButtonCornerRadiusName] floatValue];
 
-    UIColor *fillColor = attributes[BTButtonFillColorName];
+    UIColor *fillColor = attributes[BDBAttributedButtonFillColorName];
     if (!fillColor)
         fillColor = [UIColor clearColor];
 
-    UIColor *borderColor = attributes[BTButtonBorderColorName];
+    UIColor *borderColor = attributes[BDBAttributedButtonBorderColorName];
     if (!borderColor)
         borderColor = [UIColor clearColor];
 
-    CGFloat borderWidth = [attributes[BTButtonBorderWidthName] floatValue];
+    CGFloat borderWidth = [attributes[BDBAttributedButtonBorderWidthName] floatValue];
 
     NSString *identifier =
-        [NSString stringWithFormat:@"BTButtonBackgroundImage_r%0.2f_f%@_b%@_w%0.2f", radius,
-            btbutton_NSStringFromUIColor(fillColor), btbutton_NSStringFromUIColor(borderColor),
+        [NSString stringWithFormat:@"BDBAttributedButtonBackgroundImage_r%0.2f_f%@_b%@_w%0.2f", radius,
+            BDBAttributedButton_NSStringFromUIColor(fillColor), BDBAttributedButton_NSStringFromUIColor(borderColor),
             borderWidth];
 
     UIImage *image = [_backgroundImages objectForKey:identifier];

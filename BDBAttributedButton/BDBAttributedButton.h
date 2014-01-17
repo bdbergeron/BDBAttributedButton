@@ -1,5 +1,5 @@
 //
-//  BTButton.h
+//  BDBAttributedButton.h
 //
 //  Copyright (c) 2014 Bradley David Bergeron
 //
@@ -23,14 +23,14 @@
 @import UIKit;
 
 
-FOUNDATION_EXPORT NSString * const BTButtonCornerRadiusName;
-FOUNDATION_EXPORT NSString * const BTButtonFillColorName;
-FOUNDATION_EXPORT NSString * const BTButtonBorderColorName;
-FOUNDATION_EXPORT NSString * const BTButtonBorderWidthName;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonCornerRadiusName;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonFillColorName;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonBorderColorName;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonBorderWidthName;
 
 
 #pragma mark -
-@interface BTButton : UIButton
+@interface BDBAttributedButton : UIButton
 
 - (void)setStyleAttributes:(NSDictionary *)attributes forControlState:(UIControlState)state;
 - (NSDictionary *)styleAttributesForControlState:(UIControlState)state;
