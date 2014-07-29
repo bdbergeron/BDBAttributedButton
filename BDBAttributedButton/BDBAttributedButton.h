@@ -23,16 +23,18 @@
 @import UIKit;
 
 
-FOUNDATION_EXPORT NSString * const BDBCornerRadiusAttributeName;
-FOUNDATION_EXPORT NSString * const BDBFillColorAttributeName;
-FOUNDATION_EXPORT NSString * const BDBBorderColorAttributeName;
-FOUNDATION_EXPORT NSString * const BDBBorderWidthAttributeName;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonCornerRadiusAttribute;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonFillColorAttribute;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonBorderColorAttribute;
+FOUNDATION_EXPORT NSString * const BDBAttributedButtonBorderWidthAttribute;
 
 
 #pragma mark -
 @interface BDBAttributedButton : UIButton
 
-- (void)setStyleAttributes:(NSDictionary *)attributes forControlState:(UIControlState)state;
+- (void)setStyleAttributes:(NSDictionary *)attributes
+           forControlState:(UIControlState)state;
+
 - (NSDictionary *)styleAttributesForControlState:(UIControlState)state;
 
 @end

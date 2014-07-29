@@ -23,10 +23,10 @@
 #import "BDBAttributedButton.h"
 
 
-NSString * const BDBCornerRadiusAttributeName = @"com.bradbergeron.BDBCornerRadiusAttributeName";
-NSString * const BDBFillColorAttributeName    = @"com.bradbergeron.BDBFillColorAttributeName";
-NSString * const BDBBorderColorAttributeName  = @"com.bradbergeron.BDBBorderColorAttributeName";
-NSString * const BDBBorderWidthAttributeName  = @"com.bradbergeron.BDBBorderWidthAttributeName";
+NSString * const BDBAttributedButtonCornerRadiusAttribute = @"BDBAttributedButtonCornerRadiusAttribute";
+NSString * const BDBAttributedButtonFillColorAttribute    = @"BDBAttributedButtonFillColorAttribute";
+NSString * const BDBAttributedButtonBorderColorAttribute  = @"BDBAttributedButtonBorderColorAttribute";
+NSString * const BDBAttributedButtonBorderWidthAttribute  = @"BDBAttributedButtonBorderWidthAttribute";
 
 
 #pragma mark -
@@ -44,14 +44,17 @@ NSString * const BDBBorderWidthAttributeName  = @"com.bradbergeron.BDBBorderWidt
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+
+    if (self) {
         _styleAttributes = [NSMutableDictionary dictionary];
 
         self.contentEdgeInsets = [[[self class] appearance] contentEdgeInsets];
-        if (UIEdgeInsetsEqualToEdgeInsets(self.contentEdgeInsets, UIEdgeInsetsZero))
-            self.contentEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+
+        if (UIEdgeInsetsEqualToEdgeInsets(self.contentEdgeInsets, UIEdgeInsetsZero)) {
+            self.contentEdgeInsets = UIEdgeInsetsMake(10.f, 10.f, 10.f, 10.f);
+        }
     }
+
     return self;
 }
 
@@ -66,6 +69,7 @@ NSString * const BDBBorderWidthAttributeName  = @"com.bradbergeron.BDBBorderWidt
 - (void)setStyleAttributes:(NSDictionary *)attributes forControlState:(UIControlState)state
 {
     self.styleAttributes[@(state)] = attributes;
+
     [self setNeedsLayout];
 }
 
@@ -77,53 +81,64 @@ NSString * const BDBBorderWidthAttributeName  = @"com.bradbergeron.BDBBorderWidt
 #pragma mark Background Images
 static inline NSString *BDBAttributedButton_NSStringFromUIColor(UIColor *color)
 {
-    if (!color)
+    if (!color) {
         return nil;
+    }
 
-    const CGFloat *c = CGColorGetComponents(color.CGColor);
-    if (CGColorGetNumberOfComponents(color.CGColor) == 2)
-        return [NSString stringWithFormat:@"{%f, %f}", c[0], c[1]];
-    else
-        return [NSString stringWithFormat:@"{%f, %f, %f, %f}", c[0], c[1], c[2], c[3]];
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+
+    if (CGColorGetNumberOfComponents(color.CGColor) == 2) {
+        return [NSString stringWithFormat:@"{%f, %f}", components[0], components[1]];
+    } else {
+        return [NSString stringWithFormat:@"{%f, %f, %f, %f}", components[0], components[1], components[2], components[3]];
+    }
 }
 
 - (UIImage *)BDBAttributedButton_backgroundImageForState:(UIControlState)state
 {
     static NSCache *_backgroundImages;
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _backgroundImages = [NSCache new];
     });
 
     NSDictionary *attributes = self.styleAttributes[@(self.state)];
-    if (!attributes)
+
+    if (!attributes) {
         return nil;
+    }
 
-    CGFloat radius = [attributes[BDBCornerRadiusAttributeName] floatValue];
+    CGFloat radius = [attributes[BDBAttributedButtonCornerRadiusAttribute] floatValue];
 
-    UIColor *fillColor = attributes[BDBFillColorAttributeName];
-    if (!fillColor)
+    UIColor *fillColor = attributes[BDBAttributedButtonFillColorAttribute];
+
+    if (!fillColor) {
         fillColor = [UIColor clearColor];
+    }
 
-    UIColor *borderColor = attributes[BDBBorderColorAttributeName];
-    if (!borderColor)
+    UIColor *borderColor = attributes[BDBAttributedButtonBorderColorAttribute];
+
+    if (!borderColor) {
         borderColor = [UIColor clearColor];
+    }
 
-    CGFloat borderWidth = [attributes[BDBBorderWidthAttributeName] floatValue];
+    CGFloat borderWidth = [attributes[BDBAttributedButtonBorderWidthAttribute] floatValue];
 
     NSString *identifier =
-        [NSString stringWithFormat:@"BDBAttributedButtonBackgroundImage_r%0.2f_f%@_b%@_w%0.2f", radius,
-            BDBAttributedButton_NSStringFromUIColor(fillColor), BDBAttributedButton_NSStringFromUIColor(borderColor),
+        [NSString stringWithFormat:@"BDBAttributedButtonBackgroundImage_r%0.2f_f%@_b%@_w%0.2f",
+            radius,
+            BDBAttributedButton_NSStringFromUIColor(fillColor),
+            BDBAttributedButton_NSStringFromUIColor(borderColor),
             borderWidth];
 
     UIImage *image = [_backgroundImages objectForKey:identifier];
-    if (!image)
-    {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0);
+
+    if (!image) {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [[UIScreen mainScreen] scale]);
         CGContextRef context = UIGraphicsGetCurrentContext();
 
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                        cornerRadius:radius];
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius];
         CGContextAddPath(context, path.CGPath);
         CGContextClip(context);
 
@@ -139,6 +154,7 @@ static inline NSString *BDBAttributedButton_NSStringFromUIColor(UIColor *color)
 
         [_backgroundImages setObject:image forKey:identifier];
     }
+    
     return image;
 }
 
