@@ -1,10 +1,10 @@
 # BDBAttributedButton
 
+![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BDBAttributedButton/Demo.png)
+
 BDBAttributedButton is a UIButton subclass for iOS 7. Although many argue that one should not subclass UIButton, all BDBAttributedButton does is add a couple methods that make styling buttons in iOS applcations much simpler.
 
 Take a look at the included demo app in order to get a full understanding of how BDBAttributedButton works.
-
-![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BDBAttributedButton/Demo.png)
 
 ## Installation
 
@@ -21,14 +21,14 @@ Taking inspiration from Apple's push to using NSAttributedStrings throughout iOS
 
 By using different combinations of these attributes, you can create a handful of different effects, such as a red button with a white label and a 5 pixel corner radius:
 
-```obj-c
+```objc
 NSAttributedString *title =
     [[NSAttributedString alloc] initWithString:@"Button"
                                     attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
 BDBAttributedButton *button = [BDBAttributedButton new];
-[button setStyleAttributes:@{BDBCornerRadiusAttributeName:@(5.0f),
-                             BDBFillColorAttributeName:[UIColor red]}
+[button setStyleAttributes:@{BDBAttributedButtonCornerRadiusAttribute:@(5.f),
+                             BDBAttributedButtonFillColorAttribute:[UIColor red]}
            forControlState:UIControlStateNormal];
 [button setAttributedTitle:title forControlState:UIControlStateNormal];
 [button sizeToFit];
