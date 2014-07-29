@@ -1,5 +1,5 @@
 //
-//  AppDelegate.m
+//  main.m
 //
 //  Copyright (c) 2014 Bradley David Bergeron
 //
@@ -20,22 +20,14 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+@import UIKit;
+
 #import "AppDelegate.h"
-#import "MainViewController.h"
 
 
-#pragma mark -
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+int main(int argc, char * argv[])
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[MainViewController new]];
-
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
 }
-
-@end

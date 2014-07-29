@@ -1,0 +1,14 @@
+PODS:
+  - BDBAttributedButton (1.0.0)
+
+DEPENDENCIES:
+  - BDBAttributedButton (from `../`)
+
+EXTERNAL SOURCES:
+  BDBAttributedButton:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BDBAttributedButton: e0db3d0af8c334ee30d86ed1ff52ecf44ee65069
+
+COCOAPODS: 0.33.1

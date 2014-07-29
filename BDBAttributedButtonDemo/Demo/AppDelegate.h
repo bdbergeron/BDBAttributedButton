@@ -1,5 +1,5 @@
 //
-//  main.m
+//  AppDelegate.h
 //
 //  Copyright (c) 2014 Bradley David Bergeron
 //
@@ -22,11 +22,11 @@
 
 @import UIKit;
 
-#import "AppDelegate.h"
 
-int main(int argc, char * argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
+#pragma mark -
+@interface AppDelegate : UIResponder
+<UIApplicationDelegate>
+
+@property (nonatomic, strong) UIWindow *window;
+
+@end
