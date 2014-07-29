@@ -2,6 +2,7 @@
 
 ![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BDBAttributedButton/Demo.png)
 
+## Overview
 BDBAttributedButton is a UIButton subclass for iOS 7. Although many argue that one should not subclass UIButton, all BDBAttributedButton does is add a couple methods that make styling buttons in iOS applcations much simpler.
 
 Take a look at the included demo app in order to get a full understanding of how BDBAttributedButton works.
